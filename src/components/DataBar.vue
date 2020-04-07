@@ -1,17 +1,19 @@
-<template name="DataBar">
-  <div class="container">
-    <div class="data_bar container">
-      <div class="data_point">
-        Cryptocurrencies: <span class="data">{{ globalData.cryptocurrencies_number | number('0,0') }}</span>
-      </div>
-      <div class="data_point">
-        Market Cap: <span class="data">{{ globalData.market_cap_usd | currency }}</span>
-      </div>
-      <div class="data_point">
-        Bitcoin Dominance: <span class="data">{{ globalData.bitcoin_dominance_percentage | percent }}</span>
-      </div>
-      <div class="data_point">
-        24h Volume: <span class="data">{{ globalData.volume_24h_usd | number('0,0') }}</span>
+<template name="DataBar" class="">
+  <div class="underline">
+    <div class="container">
+      <div class="data_bar container">
+        <div class="data_point">
+          Cryptocurrencies: <span class="data">{{ globalData.cryptocurrencies_number | number('0,0') }}</span>
+        </div>
+        <div class="data_point">
+          Market Cap: <span class="data">{{ globalData.market_cap_usd | currency }}</span>
+        </div>
+        <div class="data_point">
+          Bitcoin Dominance: <span class="data">{{ globalData.bitcoin_dominance_percentage | percent }}</span>
+        </div>
+        <div class="data_point">
+          24h Volume: <span class="data">{{ globalData.volume_24h_usd | number('0,0') }}</span>
+        </div>
       </div>
     </div>
   </div>
@@ -36,6 +38,10 @@ export default {
 </script>
 
 <style lang="scss">
+.underline {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .data_bar {
   display: flex;
   flex-direction: row;

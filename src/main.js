@@ -9,11 +9,13 @@ import Vue2Filters from 'vue2-filters'
 
 import Buefy from 'buefy';
 import 'buefy/dist/buefy.css';
+import Trend from "vuetrend"
 
 Vue.config.productionTip = false;
 
 Vue.use(Buefy);
 Vue.use(Vue2Filters)
+Vue.use(Trend)
 
 new Vue({
 	router,
