@@ -65,24 +65,12 @@
             {{ coinData.row.circulating_supply | number('0,0') }}
           </b-table-column>
           <b-table-column
-            field="sparkline"
-            label="Price Graph"
-            auto-draw
-            smooth
-            sortable
-          >
-            <trend
-              :data="sparklineData"
-              :gradient="['#6fa8dc', '#42b983', '#2c3e50']"
-            >{{ sparklineData }}</trend>
-          </b-table-column>
-          <b-table-column
             label="24 Change"
             field="price_change_percentage_24h_in_currency"
             centered
           >
-            <span :class="['tag', {'is-danger': coinData.row.price_change_percentage_24h_in_currency < 0 },{'is-success': coinData.row.price_change_percentage_24h_in_currency >= 0}
-            ]"> {{ coinData.row.price_change_percentage_24h_in_currency | percent }}</span>
+            <span :class="['tag', {'is-danger': coinData.row.price_change_percentage_24h < 0 },{'is-success': coinData.row.price_change_percentage_24h >= 0}
+            ]"> {{ coinData.row.price_change_percentage_24h | number('0.00')}}%</span>
           </b-table-column>
         </template>
       </b-table>
@@ -116,14 +104,6 @@ export default {
         "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=250&sparkline=true&price_change_percentage=24h"
       )
       .then(response => (this.coinData = response.data));
-    axios
-      .get(
-        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&sparkline=true"
-      )
-      .then(res => {
-        let myObj = res.data;
-        console.log(myObj);
-      });
   }
 };
 </script>
