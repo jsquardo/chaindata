@@ -9,13 +9,16 @@ import Vue2Filters from 'vue2-filters'
 
 import Buefy from 'buefy';
 import 'buefy/dist/buefy.css';
-import Trend from "vuetrend"
+import '../src/assets/main.scss'
+import IconCrypto from 'vue-cryptocurrency-icons'
+import ReadMore from 'vue-read-more'
 
 Vue.config.productionTip = false;
 
 Vue.use(Buefy);
 Vue.use(Vue2Filters)
-Vue.use(Trend)
+Vue.use(IconCrypto)
+Vue.use(ReadMore)
 
 new Vue({
 	router,

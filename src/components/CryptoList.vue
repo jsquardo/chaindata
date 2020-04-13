@@ -1,6 +1,6 @@
 <template name="CryptoList" class="crypto_list">
   <div class="container flex">
-    <div class="is-size-3 has-text-weight-semibold mb-2 mt-1">
+    <div class="is-size-3 has-text-weight-semibold mb-2 mt-2">
       Top Cryptocurrencies by Market Cap
     </div>
     <div class="flex">
@@ -135,8 +135,8 @@ export default {
 .mb-2 {
   margin-bottom: 2rem;
 }
-.mt-1 {
-  margin-top: 1rem;
+.mt-2 {
+  margin-top: 2rem;
 }
 .mw-90 {
   max-width: 90% !important;
