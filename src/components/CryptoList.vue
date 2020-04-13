@@ -31,9 +31,11 @@
           >
             <span class="icon_name"><img
                 class="small_logo"
-                :src="coinData.row.image "
+                :src="coinData.row.image"
                 alt=""
-              > {{ coinData.row.name }} </span>
+              >
+              <router-link :to="{name: 'detail', params: {coinId: coinData.row.id}}"> {{ coinData.row.name }} </router-link>
+            </span>
           </b-table-column>
           <b-table-column
             field="market_cap"

@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import PageNotFound from '../views/PageNotFound.vue'
+import DetailPage from '../views/DetailPage.vue'
 
 Vue.use(VueRouter)
 
@@ -10,6 +12,18 @@ Vue.use(VueRouter)
     name: 'Home',
     component: Home
   },
+  {
+    path: '/404',
+    name: '404',
+    component: PageNotFound
+  },
+  {
+    path: "/coins/:coinId",
+    props: true,
+    name: 'detail',
+    component: DetailPage
+  },
+
   // {
   //   path: '/about',
   //   name: 'About',
@@ -21,6 +35,7 @@ Vue.use(VueRouter)
 ]
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 

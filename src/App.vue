@@ -1,8 +1,22 @@
 <template>
   <div id="app">
+    <DataBar />
+    <Navbar />
     <router-view />
   </div>
 </template>
+
+<script>
+import DataBar from "./components/DataBar";
+import Navbar from "./components/Navbar";
+
+export default {
+  components: {
+    DataBar,
+    Navbar
+  }
+};
+</script>
 
 <style lang="scss">
 #app {
